@@ -46,7 +46,7 @@ public class NativeKeyboard implements NativeKeyListener{
 
 	@Override
 	public void nativeKeyTyped(NativeKeyEvent e) {
-		// TODO Auto-generated method stub AsD hi my name is nick Nick is m!@#$%+_-=_1!@
+		// TODO Auto-generated method stub 
 		
 	}
 	
@@ -90,6 +90,33 @@ public class NativeKeyboard implements NativeKeyListener{
 				}
 				else if(key.equals("0")) {
 					return ")";
+				}
+				else if(key.equals("`")) {
+					return "~";
+				}
+				else if(key.equals("-")) {
+					return "+";
+				}
+				else if(key.equals("[")) {
+					return "{";
+				}
+				else if(key.equals("]")) {
+					return "}";
+				}
+				else if(key.equals(";")) {
+					return ":";
+				}
+				else if(key.equals("'\'")) {
+					return "|";
+				}
+			    else if(key.equals(",")) {
+					return "<";
+				}
+			    else if(key.equals(".")) {
+					return ">";
+				}
+			    else if(key.equals("/")) {
+					return "?";
 				}
 				else {
 					return key.toUpperCase();
