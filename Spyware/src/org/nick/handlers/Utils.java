@@ -58,10 +58,10 @@ public final class Utils {
 
 	
 	private static String convertKeyword(String key) {
-		if(key.equals("Space") || key.equals("space")) {
+		if(key.equalsIgnoreCase("Space")) {
 			return " ";
 		}
-		else if(key.equals("Comma") || key.equals("comma")) {
+		else if(key.equalsIgnoreCase("Comma")) {
 			return ",";
 		}
 		else if(key.equals("LEFT SHIFT") || key.equals("RIGHT SHIFT") || key.equals("tab")) {

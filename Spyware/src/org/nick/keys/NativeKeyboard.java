@@ -118,6 +118,15 @@ public class NativeKeyboard implements NativeKeyListener{
 			    else if(key.equals("/")) {
 					return "?";
 				}
+				else if(key.equalsIgnoreCase("PERIOD")){
+					return  ">";
+				}
+				else if(key.equalsIgnoreCase("COMMA")){
+					return  "<";
+				}
+				else if(key.equalsIgnoreCase("SPACE")){
+					return  " ";
+				}
 				else {
 					return key.toUpperCase();
 				}
